@@ -1,0 +1,55 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'templates/css/style.css' %}">
+
+
+
+</head>
+<body>
+
+<!--{% for tut, part_one in part_ones.items %}-->
+
+<!--&lt;!&ndash;            <div class="col s12 m6 l4">&ndash;&gt;-->
+<!--&lt;!&ndash;                <a href="{{part_one}}", style="color:#000">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="card hoverable">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="card-content">&ndash;&gt;-->
+<!--                            &lt;!&ndash;<p style="font-size:70%">Published {{tut.tutorial_published}}</p>&ndash;&gt;-->
+<!--                            <p>{{tut.blog}}</p>-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </a>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--{% endfor %}-->
+<!--{%  for i in name %}-->
+<!--    <h3>Blog posted by : {{i.name}}</h3>-->
+<!--    {% for data in i %}-->
+<!--        <h1>{{data.blog_title}}</h1>-->
+<!--    {% endfor %}-->
+<!--{% endfor %}-->
+
+{% for item in data %}
+
+
+   <section class="contact">
+      <div class="container contact-section">
+          <h4>Blog: {{item.id}}</h4>
+          <h1>{{item.blog_title}}</h1>
+          <p>{{ item.blog }}</p>
+
+      </div>
+    </section>
+    <!-- Contact section end -->
+    <!-- Footer section start -->
+    <footer>
+
+        <p>Posted By Author id  : {{ item.writer_name_id }} || Name : {{item.writer_name}}</p>
+        <p>Created Date : {{ item.created_date }} || Updated Date : {{ item.updated_date }} </p>
+    </footer>
+{% endfor %}
+</body>
+</html>
